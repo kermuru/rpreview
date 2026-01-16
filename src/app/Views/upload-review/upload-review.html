@@ -1,0 +1,23 @@
+<h2>Upload Review</h2>
+
+<div *ngIf="context">
+  <p>{{ context.name1 }}</p>
+  <p>{{ context.occupant }}</p>
+  <p>{{ context.documentno }}</p>
+  <p>{{ context.date_interment }}</p>
+</div>
+
+<form (ngSubmit)="submit()">
+  <input [(ngModel)]="form.reviewerName" name="reviewerName" placeholder="Your name" required>
+
+  <input [(ngModel)]="form.q1" name="q1" placeholder="Q1">
+  <input [(ngModel)]="form.q2" name="q2" placeholder="Q2">
+  <input [(ngModel)]="form.q3" name="q3" placeholder="Q3">
+  <input [(ngModel)]="form.q4" name="q4" placeholder="Q4">
+  <input [(ngModel)]="form.q5" name="q5" placeholder="Q5">
+  <input [(ngModel)]="form.q6" name="q6" placeholder="Q6">
+
+  <textarea [(ngModel)]="form.others" name="others"></textarea>
+
+  <button type="submit">Submit</button>
+</form>

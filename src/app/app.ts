@@ -1,22 +1,11 @@
-import { Component, signal } from '@angular/core';
-import Swal from 'sweetalert2';
+// src/app/app.ts
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+
 @Component({
-  selector: 'app-root',
-  imports: [],
-  templateUrl: './app.html',
-  styleUrl: './app.scss'
+  selector: 'app-root',          // MUST match <app-root> in index.html
+  standalone: true,              // Standalone mode
+  imports: [RouterOutlet],       // Add other standalone imports if needed
+  template: `<router-outlet></router-outlet>` // template
 })
-export class App {
-  showAlert(){
-    Swal.fire({
-      position: 'top-end',
-      text: 'Operation completed successfully.',
-      icon: 'success',
-      timer: 2000,
-      showConfirmButton: false,
-      toast: true,
-      background: '#009183',
-      color: 'white'
-    });
-  }
-}
+export class App {}              // Class name can be App
